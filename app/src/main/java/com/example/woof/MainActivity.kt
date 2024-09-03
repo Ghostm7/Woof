@@ -112,6 +112,7 @@ fun DogItem(
 ) {
     var expanded by remember { mutableStateOf(false) }
     Card(
+
         modifier = modifier
     ) {
         Column(
@@ -124,17 +125,12 @@ fun DogItem(
                 )
         ) {
             Row(
-                modifier = Modifier
+                modifier = modifier
                     .fillMaxWidth()
-                    .padding(dimensionResource(R.dimen.padding_small))
+                    .padding(dimensionResource(id = R.dimen.padding_small))
             ) {
                 DogIcon(dog.imageResourceId)
                 DogInformation(dog.name, dog.age)
-                Spacer(Modifier.weight(1f))
-                DogItemButton(
-                    expanded = expanded,
-                    onClick = { expanded = !expanded },
-                )
             }
             if (expanded) {
                 DogHobby(
